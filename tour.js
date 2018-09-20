@@ -1,7 +1,7 @@
 // Define the tour!
 
 var tour = {
-      id: "hello-hopscotch",
+      id: "sample-app-hopscotch",
       steps: [
         {
           title: "Home",
