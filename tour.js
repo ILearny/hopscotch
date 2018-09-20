@@ -17,7 +17,7 @@ var tour = {
         },
     		{
     			title: "Results",
-    			content: "You can find the respective reference links in this section",
+    			content: "You can find the respective link content in this section",
     			target: ".tab-container",
     			placement: "bottom"
     		}
