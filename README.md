@@ -29,5 +29,8 @@ Steps:
       showPrevButton: true,
     );
   ```
-
+  - Start the tour
+  ```
+  hopscotch.startTour(tour);
+  ```
    
