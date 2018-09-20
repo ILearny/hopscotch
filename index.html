@@ -1,0 +1,80 @@
+
+<html>
+	<head>
+		<style>
+			body { margin: 10px 50px; font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;}
+			
+			/*div.header-bar { float:left; }*/
+			div.header-bar div.left-floater { float:left;}
+			div.header-bar div.right-floater { float:right;}
+			
+			ul.nav-tab-panel { float:left; margin:0px; }
+			ul.nav-tab-panel li { float:left; list-style: none; list-style-type: none; }
+			ul.nav-tab-panel li:first-child { margin-left: -40px; }
+			ul.nav-tab-panel li a { padding: 15px 20px; display:block; text-transform: uppercase; letter-spacing: 1.5px; 
+				border-width: 1px 0px 1px 1px; border-color: black; border-style:solid; font-weight:bold; cursor:pointer; }
+			ul.nav-tab-panel li a.last-child { border-width: 1px 1px 1px 1px; }
+			ul.nav-tab-panel li a:hover { color: darkgrey; }
+			ul.nav-tab-panel li a span { display:block; font-size:12px; text-transform: none; font-weight:normal; }
+			ul.nav-tab-panel li.active-tab { color: darkgrey; }
+			div.tab-container { clear:both; padding:10px; border: 1px solid #CECECE; }
+			div.tab-container .tab-content { display:none; }
+			div.tab-container .tab-content.active-content { display:block; } 
+		</style>
+		<link href="http://linkedin.github.io/hopscotch/css/hopscotch-0.2.6.min.css" rel="stylesheet" ></link>   
+		<script src="https://code.jquery.com/jquery-3.1.0.min.js" ></script>
+		<script src="http://linkedin.github.io/hopscotch/js/hopscotch-0.2.6.min.js"></script>
+	</head>
+	<body>
+		<div class="header-bar">
+			<div class="left-floater">
+				<h1>Comminks</h1>
+			</div>
+			<div class="right-floater">
+				<a href="#">Start Tour</a>
+			</div>
+		</div>
+		
+		<div style="clear:both"></div>
+		
+		<div>
+			<ul class="nav-tab-panel">
+	            <li data-link="t-general" class="menu-tab active-tab" >
+					<a class="menu-link">Sample <span>General Links</span></a>
+					</li>
+	            <li data-link="t-blr" class="menu-tab" >
+					<a class="menu-link">Sample <span>Bangalore Links</span></a>
+				</li>
+	            <li data-link="t-par" class="menu-tab" >
+					<a class="menu-link">Sample <span>Paris Links</span></a>
+				</li>
+	            <li data-link="s-general" class="menu-tab" >
+					<a class="menu-link last-child">Sample <span>General Links</span></a>
+				</li>
+	        </ul>
+			
+			<div class="tab-container" >
+				<div data-content="t-general" class="tab-content  active-content" >Sample - General Links</div>
+				<div data-content="t-blr" class="tab-content" >Sample - Bangalore Links</div>
+				<div data-content="t-par" class="tab-content" >Sample - Paris Links</div>
+				<div data-content="s-general" class="tab-content" >Sample - General Links</div>
+			</div>
+		<div>
+		<script type="text/javascript">
+			$("ul.nav-tab-panel li.menu-tab").click(function(){
+				$("ul.nav-tab-panel li.menu-tab").removeClass("active-tab");
+				$(this).addClass("active-tab");
+				var contentToDisplay = $(this).data("link");
+				
+				$("div.tab-container div").removeClass("active-content");
+				$("div.tab-container div[data-content=" + contentToDisplay + "]").addClass("active-content");
+			})	;
+			
+			$("div.right-floater a").click(function(){
+				StartTour();
+			});
+			
+		</script>
+		<script src="tour.js" ></script>
+	</body>
+</html>
